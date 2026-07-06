@@ -1,0 +1,22 @@
+dateModified: 1783375173
+email:
+  fromEmail: fultonchain@gmail.com
+  fromName: 'Owl Enterprises'
+  transportType: craft\mail\transportadapters\Sendmail
+meta:
+  __names__:
+    1a677775-fe98-42e8-be18-ad1606d2fdd0: 'Owl Enterprises' # Owl Enterprises
+    586a2981-6331-4783-b231-809c5fa2ea30: 'Owl Enterprises' # Owl Enterprises
+system:
+  edition: solo
+  live: true
+  name: 'Owl Enterprises'
+  schemaVersion: 5.10.0.0
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  require2fa: false
+  requireEmailVerification: true
