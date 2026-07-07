@@ -1,12 +1,21 @@
-dateModified: 1783375173
+dateModified: 1783383657
 email:
   fromEmail: fultonchain@gmail.com
   fromName: 'Owl Enterprises'
   transportType: craft\mail\transportadapters\Sendmail
+fs:
+  images:
+    hasUrls: true
+    name: Images
+    settings:
+      path: '@webroot/images'
+    type: craft\fs\Local
+    url: $PRIMARY_SITE_URL/images
 meta:
   __names__:
     1a677775-fe98-42e8-be18-ad1606d2fdd0: 'Owl Enterprises' # Owl Enterprises
     586a2981-6331-4783-b231-809c5fa2ea30: 'Owl Enterprises' # Owl Enterprises
+    18289996-20ff-4fe5-8f22-ecfc13c45009: Images # Images
 system:
   edition: solo
   live: true
