@@ -1,20 +1,15 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta charset="utf-8" />
-    <title>Owl Enterprises</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <meta name="referrer" content="origin-when-cross-origin" />
-    <link rel="stylesheet" href="/css/app.css" />
-</head>
-<body class="ltr min-h-screen bg-slate-100 text-slate-700 antialiased">
+{% extends "layout/_base.twig" %}
+
+{% block title %}{{ currentSite.name }} - Coming Soon{% endblock %}
+
+{% block body %}
 <div class="flex min-h-screen items-center justify-center p-6">
     <div class="grid w-full max-w-4xl overflow-hidden rounded-lg bg-white shadow-2xl md:grid-cols-2">
         <div class="p-8 md:p-10">
             <h1 class="text-4xl font-bold tracking-tight text-slate-950">Coming Soon</h1>
-            <p class="mt-4 text-lg leading-8 text-slate-600">A focused web development studio is getting ready to launch.</p>
-            <p class="mt-5 leading-7">We build fast, thoughtful websites for organizations that need a polished digital presence, clear content structure, and dependable technology behind the scenes.</p>
+            <p class="mt-4 text-lg leading-8 text-slate-600">We'll be right with you.</p>
+            <p class="mt-5 leading-7">Let's be real. This is mostly AI gibberish. Nobody wants that but it's a useful tool to flesh things out a bit.</p>
+            <p class="mt-5 leading-7">We're building this thing in public and that's the way it goes.</p>
             <p class="mt-6">
                 <a class="inline-flex items-center rounded-md bg-sky-700 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-sky-800" href="mailto:fultonchain@gmail.com">
                     Get in touch
@@ -23,15 +18,13 @@
             </p>
         </div>
         <div class="bg-slate-50 p-8 md:p-10">
-            <h2 class="text-sm font-semibold uppercase tracking-wider text-slate-500">What We Do</h2>
+            <h2 class="text-sm font-semibold uppercase tracking-wider text-slate-500">Explore</h2>
             <ul class="mt-5 space-y-4">
-                <li><span class="font-medium text-sky-700">Custom websites</span><br><small class="text-slate-500">Responsive builds shaped around real business goals.</small></li>
-                <li><span class="font-medium text-sky-700">Content management</span><br><small class="text-slate-500">Flexible editing workflows that make updates simple.</small></li>
-                <li><span class="font-medium text-sky-700">Performance care</span><br><small class="text-slate-500">Clean front ends, smart assets, and steady maintenance.</small></li>
-                <li><span class="font-medium text-sky-700">Launch support</span><br><small class="text-slate-500">Strategy, QA, deployment, and post-launch help.</small></li>
+                <li><a href="/web" class="font-medium text-sky-700 transition hover:text-sky-800">Web</a><br><small class="text-slate-500">Website strategy, builds, and featured web projects.</small></li>
+                <li><a href="/print" class="font-medium text-sky-700 transition hover:text-sky-800">Print</a><br><small class="text-slate-500">Print design and production work for polished offline materials.</small></li>
+                <li><a href="/marketing" class="font-medium text-sky-700 transition hover:text-sky-800">Marketing</a><br><small class="text-slate-500">Campaign support, messaging, and creative direction.</small></li>
             </ul>
         </div>
     </div>
 </div>
-</body>
-</html>
+{% endblock %}

@@ -1,0 +1,22 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 4dd34656-e2a4-42b4-a2d9-b54d3045f82c # Website
+handle: printItem
+maxAuthors: 1
+minAuthors: 1
+name: Print
+previewTargets:
+  -
+    label: 'Primary entry page'
+    refresh: '1'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  1a677775-fe98-42e8-be18-ad1606d2fdd0: # Owl Enterprises
+    enabledByDefault: true
+    hasUrls: true
+    template: print/_entry.twig
+    uriFormat: 'print/{slug}'
+type: channel

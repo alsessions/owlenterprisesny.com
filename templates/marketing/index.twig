@@ -1,0 +1,48 @@
+{% extends "layout/_base.twig" %}
+
+{% block title %}
+    {%- set page = craft.entries().section('marketing').type('pageBuilder').one() -%}
+    {{- currentSite.name }} - {{ page ? page.title : 'Marketing' -}}
+{% endblock %}
+
+{% block body %}
+    {% set page = craft.entries()
+        .section('marketing')
+        .type('pageBuilder')
+        .one() %}
+    {% set heroImage = page ? page.heroImage.one() : null %}
+
+{% if page %}
+    <section class="relative flex min-h-80 overflow-hidden bg-slate-900 sm:min-h-[28rem]">
+        {% if heroImage %}
+            <img
+                class="absolute inset-0 h-full w-full object-cover object-center"
+                src="{{ heroImage.url }}"
+                alt="{{ heroImage.alt ?: page.title }}"
+            >
+            <div class="absolute inset-0 bg-slate-950/55"></div>
+        {% endif %}
+
+        <div class="relative mx-auto flex w-full max-w-5xl items-end px-6 py-12 lg:px-8">
+            <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">{{ page.title }}</h1>
+        </div>
+    </section>
+{% endif %}
+
+<main class="mx-auto min-h-screen w-full max-w-5xl px-6 py-12 sm:py-16 lg:px-8">
+    <section>
+        {% if page %}
+            {% if page.content %}
+                <div class="prose prose-slate max-w-none">
+                    {{ page.content }}
+                </div>
+            {% endif %}
+        {% else %}
+            <div class="text-center">
+                <h1 class="text-3xl font-bold tracking-tight text-slate-950">Marketing</h1>
+                <p class="mt-4 text-slate-600">Content is coming soon.</p>
+            </div>
+        {% endif %}
+    </section>
+</main>
+{% endblock %}

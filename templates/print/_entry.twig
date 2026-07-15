@@ -1,0 +1,32 @@
+{% extends "layout/_base.twig" %}
+
+{% block title %}{{ currentSite.name }} - {{ entry.title }}{% endblock %}
+
+{% block body %}
+    {% set siteImage = entry.siteImage.one() %}
+
+<section class="relative flex min-h-80 overflow-hidden bg-slate-900 sm:min-h-[28rem]">
+    {% if siteImage %}
+        <img
+            class="absolute inset-0 h-full w-full object-cover object-center"
+            src="{{ siteImage.url }}"
+            alt="{{ siteImage.alt ?: entry.title }}"
+        >
+        <div class="absolute inset-0 bg-slate-950/55"></div>
+    {% endif %}
+
+    <div class="relative mx-auto flex w-full max-w-5xl items-end px-6 py-12 lg:px-8">
+        <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">{{ entry.title }}</h1>
+    </div>
+</section>
+
+<main class="mx-auto min-h-screen w-full max-w-5xl px-6 py-12 sm:py-16 lg:px-8">
+    <section>
+        {% if entry.content %}
+            <div class="prose prose-slate max-w-none">
+                {{ entry.content }}
+            </div>
+        {% endif %}
+    </section>
+</main>
+{% endblock %}

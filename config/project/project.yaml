@@ -1,4 +1,4 @@
-dateModified: 1783383657
+dateModified: 1783726436
 email:
   fromEmail: fultonchain@gmail.com
   fromName: 'Owl Enterprises'
@@ -14,8 +14,30 @@ fs:
 meta:
   __names__:
     1a677775-fe98-42e8-be18-ad1606d2fdd0: 'Owl Enterprises' # Owl Enterprises
+    2fce5afb-62d8-4078-84f9-2555421513c0: Site # Site
+    3c3790fe-2266-47a3-8b83-94ef50e34946: Content # Content
+    4ceb1155-2af4-43f8-baf8-fbf3ce3d52f4: 'Print Index' # Print Index
+    4dd34656-e2a4-42b4-a2d9-b54d3045f82c: Website # Website
+    4f8fd8d3-864f-4a7d-b501-5fc10b1b33de: 'Hero Image' # Hero Image
+    6ef07e35-17a0-4f85-81ae-17ebc73558e1: 'Hero Image' # Hero Image
+    0516d050-39e4-44f7-8675-f971dd16ebd7: 'Resource Link' # Resource Link
     586a2981-6331-4783-b231-809c5fa2ea30: 'Owl Enterprises' # Owl Enterprises
+    9402afd6-6300-4cbc-9763-9081079005dc: 'Marketing Index' # Marketing Index
+    19635b4b-7b82-4504-837d-0b01d208dd30: Print # Print
     18289996-20ff-4fe5-8f22-ecfc13c45009: Images # Images
+    bd0c6d90-936d-4548-91ec-bc5c6ce80582: 'Web Index' # Web Index
+    c77cbff1-2ae3-4e4b-ac9f-09a502a854f5: Website # Website
+    d7f69a39-dac3-4926-b8dc-37b3f26c39c6: 'Page Builder' # Page Builder
+    d87ddf81-f464-4dfd-b052-918675e135ce: 'Site Image' # Site Image
+plugins:
+  ckeditor:
+    edition: standard
+    enabled: true
+    schemaVersion: 5.6.0.0
+  expanded-singles:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
 system:
   edition: solo
   live: true

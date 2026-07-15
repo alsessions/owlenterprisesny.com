@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <title>{% block title %}{{ currentSite.name }}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="referrer" content="origin-when-cross-origin" />
+    <link rel="stylesheet" href="/css/app.css" />
+</head>
+<body class="ltr min-h-screen bg-slate-100 text-slate-700 antialiased">
+
+{% include "partials/_header.twig" %}
+
+{% block body %}{% endblock %}
+
+{% include "partials/_footer.twig" %}
+
+</body>
+</html>

@@ -1,3 +1,12 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @source "../../templates";
+
+a:not([class]) {
+    color: var(--color-blue-600);
+}
+
+a.site-title {
+    color: var(--color-slate-950);
+}

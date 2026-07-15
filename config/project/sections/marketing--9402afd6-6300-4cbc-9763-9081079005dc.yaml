@@ -1,0 +1,24 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: d7f69a39-dac3-4926-b8dc-37b3f26c39c6 # Page Builder
+  -
+    uid: 6ef07e35-17a0-4f85-81ae-17ebc73558e1 # Hero Image
+handle: marketing
+maxAuthors: 1
+minAuthors: 1
+name: 'Marketing Index'
+previewTargets:
+  -
+    label: 'Primary entry page'
+    refresh: '1'
+    urlFormat: '{url}'
+propagationMethod: all
+siteSettings:
+  1a677775-fe98-42e8-be18-ad1606d2fdd0: # Owl Enterprises
+    enabledByDefault: true
+    hasUrls: true
+    template: marketing/index.twig
+    uriFormat: marketing
+type: single

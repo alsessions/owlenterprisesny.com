@@ -1,0 +1,118 @@
+{% extends "layout/_base.twig" %}
+
+{% block title %}
+    {%- set page = craft.entries().section('webDev').type('pageBuilder').one() -%}
+    {{- currentSite.name }} - {{ page ? page.title : 'Web' -}}
+{% endblock %}
+
+{% block body %}
+    {% set page = craft.entries()
+        .section('webDev')
+        .type('pageBuilder')
+        .one() %}
+    {% set heroImage = page ? page.heroImage.one() : null %}
+    {% set websites = craft.entries()
+        .section('website')
+        .type('website')
+        .all() %}
+
+{% if page %}
+    <section class="relative flex min-h-80 overflow-hidden bg-slate-900 sm:min-h-[28rem]">
+        {% if heroImage %}
+            <img
+                class="absolute inset-0 h-full w-full object-cover object-center"
+                src="{{ heroImage.url }}"
+                alt="{{ heroImage.alt ?: page.title }}"
+            >
+            <div class="absolute inset-0 bg-slate-950/55"></div>
+        {% endif %}
+
+        <div class="relative mx-auto flex w-full max-w-5xl items-end px-6 py-12 lg:px-8">
+            <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">{{ page.title }}</h1>
+        </div>
+    </section>
+{% endif %}
+
+<main class="mx-auto min-h-screen w-full max-w-5xl px-6 py-12 sm:py-16 lg:px-8">
+    <section>
+        {% if page %}
+            {% if page.content %}
+                <div class="prose prose-slate max-w-none">
+                    {{ page.content }}
+                </div>
+            {% endif %}
+        {% else %}
+            <div class="text-center">
+                <h1 class="text-3xl font-bold tracking-tight text-slate-950">Web</h1>
+                <p class="mt-4 text-slate-600">Content is coming soon.</p>
+            </div>
+        {% endif %}
+
+        <div class="mt-10 grid gap-6 md:grid-cols-2">
+            <article class="rounded-lg bg-white p-6 shadow-sm sm:p-8">
+                <h2 class="text-2xl font-bold tracking-tight text-slate-950">Craft CMS / WordPress</h2>
+                <p class="mt-3 text-sm font-semibold uppercase tracking-wider text-sky-700">Built for ongoing support</p>
+
+                <ul class="mt-6 space-y-4 text-slate-600">
+                    <li><strong class="font-semibold text-slate-950">Customer-friendly editing:</strong> Craft gives your team a clear control panel for updating pages, images, and structured content without developer help.</li>
+                    <li><strong class="font-semibold text-slate-950">Reliable content workflows:</strong> Entries, fields, assets, drafts, revisions, and permissions make it easier to manage a live business site over time.</li>
+                    <li><strong class="font-semibold text-slate-950">Better long-term service:</strong> Content and templates stay separate, so we can improve design, add sections, and support new needs without rebuilding the whole site.</li>
+                    <li><strong class="font-semibold text-slate-950">Room to grow:</strong> Craft works well for service pages, case studies, landing pages, blogs, staff profiles, and custom content types.</li>
+                </ul>
+            </article>
+
+            <article class="rounded-lg bg-white p-6 shadow-sm sm:p-8">
+                <h2 class="text-2xl font-bold tracking-tight text-slate-950">Static Site Generators</h2>
+                <p class="mt-3 text-sm font-semibold uppercase tracking-wider text-sky-700">Best for simpler sites</p>
+
+                <ul class="mt-6 space-y-4 text-slate-600">
+                    <li><strong class="font-semibold text-slate-950">Speed:</strong> Static sites can be extremely fast because pages are prebuilt.</li>
+                    <li><strong class="font-semibold text-slate-950">Simplicity:</strong> For small sites that rarely change, there are fewer moving parts.</li>
+                    <li><strong class="font-semibold text-slate-950">Lower hosting needs:</strong> Static files can often run on lightweight hosting with minimal server requirements.</li>
+                    <li><strong class="font-semibold text-slate-950">The tradeoff:</strong> Updates often depend on a developer, build process, or an extra editing layer.</li>
+                </ul>
+            </article>
+        </div>
+
+        <p class="mx-auto mt-8 max-w-3xl rounded-lg bg-sky-50 px-6 py-5 text-center text-lg font-medium leading-6 text-slate-800 ">For clients who expect regular updates, hands-on support, and a site that can grow over time, Craft CMS is usually the better fit. Static site generators are great for lean, rarely changed sites, but Craft is built for reliability, customer service, and ongoing improvement.</p>
+
+        {% if websites %}
+            <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {% for website in websites %}
+                    {% set siteImage = website.siteImage.one() %}
+
+                    <article class="overflow-hidden rounded-lg bg-white shadow-sm">
+                        {% if siteImage %}
+                            <a href="{{ website.url }}" class="block aspect-video overflow-hidden bg-slate-200">
+                                <img
+                                    class="h-full w-full object-cover object-center transition duration-300 hover:scale-105"
+                                    src="{{ siteImage.url }}"
+                                    alt="{{ siteImage.alt ?: website.title }}"
+                                    loading="lazy"
+                                    decoding="async"
+                                >
+                            </a>
+                        {% endif %}
+
+                        <div class="p-5">
+                            <h2 class="text-xl font-bold tracking-tight text-slate-950">
+                                <a href="{{ website.url }}" class="transition hover:text-sky-700">{{ website.title }}</a>
+                            </h2>
+
+                            {% if website.content %}
+                                <div class="prose prose-slate mt-4 line-clamp-4">
+                                    {{ website.content }}
+                                </div>
+                            {% endif %}
+
+                            {% if website.resourceLink %}
+                                <a href="{{ website.resourceLink }}" class="mt-5 inline-flex items-center rounded-md bg-sky-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-sky-800" target="_blank" rel="noopener noreferrer">Visit Website</a>
+                            {% endif %}
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </section>
+</main>
+{% endblock %}
